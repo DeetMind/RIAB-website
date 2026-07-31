@@ -2,7 +2,7 @@ const steps = [
   {
     n: '01',
     title: 'You send a spreadsheet',
-    body: 'A standard intake template — one row per property or asset. Address, asset type, replacement value, insurance status. Takes about half a day to complete for 50 properties.',
+    body: 'A standard intake template with one row per property or asset. Address, asset type, replacement value, insurance status. Takes about half a day to complete for 50 properties.',
     tag: 'You provide',
   },
   {
@@ -32,7 +32,7 @@ export default function HowItWorks() {
           </h2>
           <p className="text-muted max-w-2xl mx-auto">
             The same methodology the federal government uses in its own hazard mitigation benefit-cost analysis.
-            Results are presented as planning-grade ranges with stated assumptions — so they hold up in front of a committee.
+            Results are presented as planning-grade ranges with stated assumptions, so they hold up in front of a committee.
           </p>
         </div>
 
@@ -54,7 +54,7 @@ export default function HowItWorks() {
         <div className="mt-10 bg-teal-light border-l-4 border-teal rounded-r-xl p-5 max-w-3xl mx-auto">
           <p className="text-sm text-teal-dark leading-relaxed">
             <span className="font-semibold">The same numbers serve two purposes:</span>{' '}
-            the output that supports your credit case also supports a FEMA HMGP grant application —
+            the output that supports your credit case also supports a FEMA HMGP grant application,
             reducing the cost of deploying capital on resilience.
           </p>
         </div>

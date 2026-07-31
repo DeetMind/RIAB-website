@@ -43,14 +43,14 @@ export default function Hero() {
           <p className="text-lg text-muted leading-relaxed mb-4">
             The average flood-exposed loan portfolio carries{' '}
             <span className="font-semibold text-ink">$112k in annual expected loss</span>.
-            Most lenders don't know which properties are driving it — or that{' '}
+            Most lenders don't know which properties are driving it, or that{' '}
             <span className="font-semibold text-ink">21 of 38 could support a resilience loan today</span>{' '}
             without a grant.
           </p>
           <p className="text-base text-muted leading-relaxed mb-3">
             <span className="font-semibold text-ink">We don't sell another flood score.</span>{' '}
             First Street, Jupiter, and Moody's tell you what the risk is.
-            RIAB tells you what to do about it — which interventions reduce it most cost-effectively,
+            RIAB tells you what to do about it: which interventions reduce it most cost-effectively,
             who captures each avoided loss, and how to structure the financing.
           </p>
           <p className="text-base text-muted leading-relaxed mb-8">
@@ -71,7 +71,7 @@ export default function Hero() {
         {/* Right — animated EAL flow */}
         <div className="bg-surface rounded-2xl p-8">
           <p className="text-xs font-semibold uppercase tracking-widest text-muted mb-6 text-center">
-            What RIAB shows you — live example
+            What RIAB shows you · live example
           </p>
           <div className="grid grid-cols-3 gap-2 items-center mb-6">
             <div className="text-center bg-white rounded-xl p-4 shadow-sm">
@@ -99,7 +99,7 @@ export default function Hero() {
             <div className="text-sm text-white/80 mt-1">63% reduction · ranked by who captures it</div>
           </div>
           <p className="text-xs text-muted text-center mt-4">
-            Grounded in FEMA HAZUS depth-damage functions — same methodology as federal hazard mitigation benefit-cost analysis
+            Grounded in FEMA HAZUS depth-damage functions, the same methodology as federal hazard mitigation benefit-cost analysis
           </p>
         </div>
 

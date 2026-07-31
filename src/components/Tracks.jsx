@@ -10,7 +10,7 @@ const tracks = [
       'Every property classified: loan-viable, grant-eligible, or blended',
       'Financing label with DSCR rationale your credit committee can test',
       'CRA-ready documentation maintained on an ongoing basis',
-      'Benefit allocation by stakeholder — showing your collateral protection independently of borrower cash flow',
+      'Benefit allocation by stakeholder, showing your collateral protection independently of borrower cash flow',
     ],
     tiers: [
       { n: '1', name: 'Pilot', desc: '20–50 properties, 6–8 weeks, fixed scope.', price: 'From $7,500' },
@@ -51,7 +51,7 @@ export default function Tracks() {
             Same methodology. Different buyer, different output.
           </h2>
           <p className="text-muted max-w-2xl mx-auto">
-            We offer a tiered process beginning with a pilot. The first step is always a free sample analysis — enough to take to your committee.
+            We offer a tiered process beginning with a pilot. The first step is always a free sample analysis, enough to take to your committee.
           </p>
         </div>
 

@@ -1,6 +1,6 @@
 export const trackA = {
   id: 'a',
-  label: 'Track A — Community Bank',
+  label: 'Track A: Community Bank',
   accentColor: '#1D9E75',
   accentLight: '#E4F5EE',
   accentMid: '#A8D9C3',
@@ -13,11 +13,11 @@ export const trackA = {
 
   summary: {
     headline: '21 of 38 properties are loan-viable today',
-    body: 'The top two interventions produce $31.3k in combined annual avoided loss at a total cost of $51,200. At 5% over 10 years, debt service of $6,620/yr is covered 4.7× by avoided loss alone. 29% of total avoided loss ($20,600/yr) accrues to the lender as reduced collateral exposure — a credit rationale independent of borrower cash flow. NFIP premium relief adds $3,200–$5,800/yr in real cash savings on AE-zone properties.',
+    body: 'The top two interventions produce $31.3k in combined annual avoided loss at a total cost of $51,200. At 5% over 10 years, debt service of $6,620/yr is covered 4.7× by avoided loss alone. 29% of total avoided loss ($20,600/yr) accrues to the lender as reduced collateral exposure, a credit rationale independent of borrower cash flow. NFIP premium relief adds $3,200–$5,800/yr in real cash savings on AE-zone properties.',
     recs: [
-      'Originate resilience loans on the 8 AE-zone single-family properties (backflow preventers) — strongest return, shortest payback (1.6 yr), no grant needed.',
-      'Bundle the 4 AE-zone multifamily properties for HVAC elevation — DSCR of 4.7× comfortably meets standard underwriting.',
-      'Route 9 blended properties to a grant buydown programme first — public benefit share justifies subsidy.',
+      'Originate resilience loans on the 8 AE-zone single-family properties (backflow preventers): strongest return, shortest payback (1.6 yr), no grant needed.',
+      'Bundle the 4 AE-zone multifamily properties for HVAC elevation. A DSCR of 4.7× comfortably meets standard underwriting.',
+      'Route 9 blended properties to a grant buydown programme first, since the public benefit share justifies the subsidy.',
     ],
   },
 
@@ -28,7 +28,7 @@ export const trackA = {
     note: 'FEMA HAZUS depth-damage functions calibrated to AE/X zones · Top-5 assumes full implementation across 32 of 38 properties · 6 properties: insufficient data',
   },
 
-  secondaryBoxTitle: 'Lender exposure — collateral protection from top-5 interventions',
+  secondaryBoxTitle: 'Lender exposure: collateral protection from top-5 interventions',
   secondaryBoxes: [
     { label: 'Collateral protection / yr', value: '$20,600', sub: '29% of total avoided loss' },
     { label: 'NFIP premium relief / yr',   value: '$3.2–5.8k', sub: 'AE-zone properties, real cash' },
@@ -58,9 +58,9 @@ export const trackA = {
     { name:'Insurer',          pct:21, value:'$14,900', color:'#C07A10' },
     { name:'Public sector',    pct:12, value:'$8,500',  color:'#B4B2A9' },
   ],
-  allocationNote: 'Lender value (29%) accrues independently of borrower repayment — collateral protection holds even if the borrower does not service the resilience loan.',
+  allocationNote: 'Lender value (29%) accrues independently of borrower repayment. Collateral protection holds even if the borrower does not service the resilience loan.',
 
-  financingLabel: 'Financing classification — 38 properties',
+  financingLabel: 'Financing classification: 38 properties',
   financing: [
     { badge:'Loan-viable',       badgeType:'loan',  desc:'Avoided loss covers debt service (DSCR ≥ 1.25×)', count:21 },
     { badge:'Blended',           badgeType:'blend', desc:'Partial loan + grant buydown needed',              count:9  },

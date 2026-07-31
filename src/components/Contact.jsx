@@ -37,14 +37,14 @@ export default function Contact() {
             </h2>
             <p className="text-muted leading-relaxed mb-6">
               Send us your intake template with 20–50 properties or assets.
-              We'll return a free sample analysis on a subset — enough to take to your committee —
+              We'll return a free sample analysis on a subset, enough to take to your committee,
               plus a fixed-fee quote for the full pilot.
             </p>
 
             <div className="space-y-4 mb-8">
               {[
-                { label: 'Track A — bank / lender pilot', price: 'From $7,500', detail: '20–50 properties · 6–8 weeks · fixed scope' },
-                { label: 'Track B — infrastructure pilot', price: 'Introductory: at cost', detail: 'One asset class, one jurisdiction · 6–8 weeks' },
+                { label: 'Track A: bank / lender pilot', price: 'From $7,500', detail: '20–50 properties · 6–8 weeks · fixed scope' },
+                { label: 'Track B: infrastructure pilot', price: 'Introductory: at cost', detail: 'One asset class, one jurisdiction · 6–8 weeks' },
               ].map((t) => (
                 <div key={t.label} className="flex items-start gap-4 p-4 rounded-xl bg-surface border border-border">
                   <div className="flex-1">
@@ -92,8 +92,8 @@ export default function Contact() {
                   <label className="block text-xs font-semibold text-muted uppercase tracking-wider mb-1.5">I'm interested in</label>
                   <select required value={form.track} onChange={set('track')} className={inputCls}>
                     <option value="">Select a track…</option>
-                    <option value="Track A — bank / lender">Track A — bank / lender portfolio</option>
-                    <option value="Track B — infrastructure / municipal">Track B — infrastructure / municipal</option>
+                    <option value="Track A — bank / lender">Track A: bank / lender portfolio</option>
+                    <option value="Track B — infrastructure / municipal">Track B: infrastructure / municipal</option>
                     <option value="Both tracks">Both tracks</option>
                   </select>
                 </div>
@@ -108,7 +108,7 @@ export default function Contact() {
                   {status === 'sending' ? 'Sending…' : 'Request a pilot →'}
                 </button>
                 {status === 'error' && (
-                  <p className="text-red-500 text-xs text-center">Something went wrong — please email me@daniel-talero.com directly.</p>
+                  <p className="text-red-500 text-xs text-center">Something went wrong. Please email me@daniel-talero.com directly.</p>
                 )}
               </form>
             )}

@@ -166,7 +166,7 @@ const CustomTooltip = ({ active, payload }) => {
   return (
     <div className="bg-white border border-border rounded-lg p-2 shadow-sm text-xs">
       <p className="font-semibold text-ink">{d.name}</p>
-      <p className="text-muted">{d.value} — {d.pct}%</p>
+      <p className="text-muted">{d.value} · {d.pct}%</p>
     </div>
   )
 }
