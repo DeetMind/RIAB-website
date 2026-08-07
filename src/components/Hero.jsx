@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-function CountUp({ end, prefix = '', suffix = '', duration = 1800 }) {
+function CountUp({ end, suffix = '', duration = 1600 }) {
   const [val, setVal] = useState(0)
   const ref = useRef(null)
   const started = useRef(false)
@@ -9,53 +9,70 @@ function CountUp({ end, prefix = '', suffix = '', duration = 1800 }) {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting && !started.current) {
         started.current = true
-        const startTime = performance.now()
+        const t0 = performance.now()
         const tick = (now) => {
-          const progress = Math.min((now - startTime) / duration, 1)
-          const ease = 1 - Math.pow(1 - progress, 3)
+          const p = Math.min((now - t0) / duration, 1)
+          const ease = 1 - Math.pow(1 - p, 3)
           setVal(Math.round(ease * end))
-          if (progress < 1) requestAnimationFrame(tick)
+          if (p < 1) requestAnimationFrame(tick)
         }
         requestAnimationFrame(tick)
       }
-    }, { threshold: 0.5 })
+    }, { threshold: 0.4 })
     if (ref.current) observer.observe(ref.current)
     return () => observer.disconnect()
   }, [end, duration])
 
-  return <span ref={ref}>{prefix}{val.toLocaleString()}{suffix}</span>
+  return <span ref={ref}>${val}{suffix}</span>
 }
+
+const ALLOCATION = [
+  { label: 'Borrower',          pct: 38, color: '#1D9E75' },
+  { label: 'Your institution',  pct: 29, color: '#3D5A6E' },
+  { label: 'Insurer',           pct: 21, color: '#C07A10' },
+  { label: 'Public sector',     pct: 12, color: '#B4B2A9' },
+]
 
 export default function Hero() {
   return (
     <section className="min-h-screen pt-14 flex items-center bg-white">
       <div className="max-w-6xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-16 items-center">
 
-        {/* Left — copy */}
+        {/* Left */}
         <div>
-          <div className="inline-block text-xs font-semibold tracking-widest uppercase text-teal bg-teal-light px-3 py-1 rounded-full mb-6">
-            Flood resilience finance
+          <div className="flex items-center gap-2 mb-6">
+            <div className="w-2 h-2 rounded-full bg-teal" />
+            <span className="text-xs font-semibold uppercase tracking-widest text-muted">
+              Flood resilience finance
+            </span>
           </div>
-          <h1 className="text-4xl lg:text-5xl font-bold text-ink leading-tight mb-6">
-            Flood risk,<br />
+
+          <h1 className="text-4xl lg:text-5xl font-bold text-ink leading-tight mb-5">
+            Flood risk,{' '}
             <span className="text-teal">made financeable.</span>
           </h1>
-          <p className="text-lg text-muted leading-relaxed mb-4">
-            The average flood-exposed loan portfolio carries{' '}
-            <span className="font-semibold text-ink">$112k in annual expected loss</span>.
-            Most lenders don't know which properties are driving it, or that{' '}
-            <span className="font-semibold text-ink">21 of 38 could support a resilience loan today</span>{' '}
-            without a grant.
+
+          <p className="text-lg text-muted leading-relaxed mb-5">
+            Most lenders know some of their book is flood-exposed.
+            Few know that{' '}
+            <span className="font-semibold text-ink">
+              more than half those properties can support a resilience loan today
+            </span>{' '}
+            — without a grant, on the strength of avoided loss alone.
           </p>
-          <p className="text-base text-muted leading-relaxed mb-3">
-            <span className="font-semibold text-ink">We don't sell another flood score.</span>{' '}
-            First Street, Jupiter, and Moody's tell you what the risk is.
-            RIAB tells you what to do about it: which interventions reduce it most cost-effectively,
-            who captures each avoided loss, and how to structure the financing.
-          </p>
-          <p className="text-base text-muted leading-relaxed mb-8">
+
+          <p className="text-base text-ink font-semibold mb-1">
             The output is a decision, not a data point.
           </p>
+          <div className="border-l-2 border-teal pl-4 mb-8">
+            <p className="text-base text-muted leading-relaxed">
+              First Street, Jupiter, and Moody's tell you what the risk is.
+              RIAB tells you what to do about it — which interventions cut the most
+              risk per dollar, who captures each avoided loss, and how to structure
+              the financing.
+            </p>
+          </div>
+
           <div className="flex flex-wrap gap-3">
             <a href="#output"
               className="bg-teal text-white px-6 py-3 rounded-full font-semibold hover:bg-teal-dark transition-colors text-sm">
@@ -68,38 +85,53 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right — animated EAL flow */}
-        <div className="bg-surface rounded-2xl p-8">
+        {/* Right */}
+        <div className="bg-surface rounded-2xl p-7">
           <p className="text-xs font-semibold uppercase tracking-widest text-muted mb-6 text-center">
-            What RIAB shows you · live example
+            What RIAB calculates — live example
           </p>
-          <div className="grid grid-cols-3 gap-2 items-center mb-6">
-            <div className="text-center bg-white rounded-xl p-4 shadow-sm">
-              <div className="text-xs font-semibold uppercase tracking-wider text-muted mb-2">Baseline EAL</div>
-              <div className="text-3xl font-bold text-ink">
-                $<CountUp end={112} suffix="k" />
-              </div>
-              <div className="text-xs text-muted mt-1">annual expected loss</div>
+
+          {/* EAL arithmetic — prominent */}
+          <div className="grid grid-cols-[1fr_22px_1fr_22px_1fr] items-center mb-5">
+            <div className="bg-white rounded-xl p-4 text-center shadow-sm">
+              <p className="text-xs font-semibold uppercase tracking-wider text-muted mb-2">Baseline EAL</p>
+              <p className="text-3xl font-bold text-ink"><CountUp end={112} suffix="k" duration={1400} /></p>
+              <p className="text-xs text-muted mt-1">annual expected loss</p>
             </div>
-            <div className="text-center text-2xl text-muted font-light">−</div>
-            <div className="text-center bg-white rounded-xl p-4 shadow-sm">
-              <div className="text-xs font-semibold uppercase tracking-wider text-muted mb-2">After interventions</div>
-              <div className="text-3xl font-bold text-teal-dark">
-                $<CountUp end={41} suffix="k" duration={2000} />
-              </div>
-              <div className="text-xs text-muted mt-1">residual loss</div>
+            <p className="text-xl text-muted text-center">−</p>
+            <div className="bg-white rounded-xl p-4 text-center shadow-sm">
+              <p className="text-xs font-semibold uppercase tracking-wider text-muted mb-2">After interventions</p>
+              <p className="text-3xl font-bold text-teal-dark"><CountUp end={41} suffix="k" duration={1800} /></p>
+              <p className="text-xs text-muted mt-1">residual expected loss</p>
+            </div>
+            <p className="text-xl text-muted text-center">=</p>
+            <div className="rounded-xl p-4 text-center" style={{ background: '#1D9E75' }}>
+              <p className="text-xs font-semibold uppercase tracking-wider text-white/80 mb-2">Avoided / yr</p>
+              <p className="text-3xl font-bold text-white"><CountUp end={71} suffix="k" duration={2000} /></p>
+              <p className="text-xs text-white/70 mt-1">63% reduction</p>
             </div>
           </div>
-          <div className="text-center text-2xl text-muted mb-4">=</div>
-          <div className="text-center bg-teal rounded-xl p-5 shadow-sm">
-            <div className="text-xs font-semibold uppercase tracking-wider text-white/80 mb-2">Annual avoided loss</div>
-            <div className="text-4xl font-bold text-white">
-              $<CountUp end={71} suffix="k" duration={2200} />
+
+          {/* Allocation bars — compact, secondary */}
+          <div className="bg-white/60 rounded-xl px-4 py-3 mb-4">
+            <p className="text-xs text-muted mb-2.5">Who captures the $71k / yr</p>
+            <div className="space-y-1.5">
+              {ALLOCATION.map((row) => (
+                <div key={row.label} className="flex items-center gap-2">
+                  <span className="text-xs text-muted w-32 flex-shrink-0">{row.label}</span>
+                  <div className="flex-1 h-1.5 bg-border rounded-full overflow-hidden">
+                    <div className="h-full rounded-full"
+                      style={{ width: `${row.pct * 2.55}%`, background: row.color }} />
+                  </div>
+                  <span className="text-xs text-muted w-7 text-right">{row.pct}%</span>
+                </div>
+              ))}
             </div>
-            <div className="text-sm text-white/80 mt-1">63% reduction · ranked by who captures it</div>
           </div>
-          <p className="text-xs text-muted text-center mt-4">
-            Grounded in FEMA HAZUS depth-damage functions, the same methodology as federal hazard mitigation benefit-cost analysis
+
+          <p className="text-xs text-muted text-center italic">
+            Grounded in FEMA HAZUS depth-damage functions — same methodology as
+            federal hazard mitigation benefit-cost analysis
           </p>
         </div>
 
