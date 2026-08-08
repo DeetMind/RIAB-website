@@ -74,11 +74,10 @@ export default function Tracks() {
             </span>
           </div>
           <h2 className="text-3xl font-bold text-ink mb-3">
-            Same methodology. Different buyer, different output.
+           FEMA-grounded analysis, structured for credit committees or bond boards
           </h2>
           <p className="text-muted text-sm max-w-xl mx-auto">
-            Every engagement starts with a free sample analysis on a subset of your portfolio,
-            enough to take to your committee before committing to a full pilot.
+            We apply a consistent methodology across asset classes and capital structures. It begins with a free sample analysis on a subset of your portfolio, enough to take to your committee before committing to a full pilot
           </p>
         </div>
 
