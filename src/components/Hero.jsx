@@ -39,13 +39,7 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-16 items-center">
 
         {/* Left */}
-        <div>
-          <div className="flex items-center gap-2 mb-6">
-            <div className="w-2 h-2 rounded-full bg-teal" />
-            <span className="text-xs font-semibold uppercase tracking-widest text-muted">
-              Flood resilience finance
-            </span>
-          </div>
+      
 
           <h1 className="text-4xl lg:text-5xl font-bold text-ink leading-tight mb-5">
             Flood risk,{' '}
