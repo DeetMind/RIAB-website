@@ -117,7 +117,7 @@ export const trackA = {
   allocationLabel: 'Who captures the $71k avoided loss / yr',
   allocation: [
     { name: 'Borrower',          pct: 38, value: '$26,900', color: '#1D9E75' },
-    { name: 'Your institution',  pct: 29, value: '$20,600', color: '#3D5A6E' },
+    { name: 'Your institution',  pct: 29, value: '$20,600', color: '#1E3A52' },
     { name: 'Insurer',           pct: 21, value: '$14,900', color: '#C07A10' },
     { name: 'Public sector',     pct: 12, value: '$8,500',  color: '#B4B2A9' },
   ],

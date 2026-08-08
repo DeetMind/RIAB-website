@@ -323,32 +323,71 @@ const DonutTip = ({ active, payload }) => {
   )
 }
 
-function Donut({ data, label, centreLabel, centreSub, note }) {
+function Donut({ data, label, highlightIdx, highlightPct, highlightLabel, highlightSub, note }) {
+  const hi = data[highlightIdx]
   return (
     <div>
       <p className="text-xs font-semibold uppercase tracking-wider text-muted mb-3">{label}</p>
-      <div className="relative h-48">
+
+      {/* Highlighted segment callout — above the chart, no overlap */}
+      {hi && (
+        <div className="flex items-center gap-3 mb-3 px-3 py-2 rounded-lg"
+          style={{ background: hi.color + '18', border: `1px solid ${hi.color}40` }}>
+          <span className="text-2xl font-bold" style={{ color: hi.color }}>
+            {highlightPct || hi.pct}%
+          </span>
+          <div>
+            <p className="text-xs font-semibold text-ink">{highlightLabel || hi.name}</p>
+            {highlightSub && <p className="text-xs text-muted">{highlightSub}</p>}
+          </div>
+        </div>
+      )}
+
+      {/* Donut — no centre overlay */}
+      <div className="h-44">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
             <Pie data={data} dataKey="pct" cx="50%" cy="50%"
-              innerRadius="52%" outerRadius="76%"
+              innerRadius="48%" outerRadius="74%"
               paddingAngle={2} startAngle={90} endAngle={-270}>
-              {data.map((d, i) => <Cell key={i} fill={d.color} />)}
+              {data.map((d, i) => (
+                <Cell
+                  key={i}
+                  fill={d.color}
+                  stroke={i === highlightIdx ? d.color : 'transparent'}
+                  strokeWidth={i === highlightIdx ? 3 : 0}
+                />
+              ))}
             </Pie>
             <Tooltip content={<DonutTip />} />
           </PieChart>
         </ResponsiveContainer>
-        <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-          <p className="text-2xl font-bold text-ink">{centreLabel}</p>
-          <p className="text-xs text-muted mt-0.5 text-center px-6 leading-tight">{centreSub}</p>
-        </div>
       </div>
+
+      {/* Legend */}
       <div className="space-y-1.5 mt-2">
         {data.map((d, i) => (
-          <div key={i} className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: d.color }} />
-            <span className="text-xs text-muted flex-1">{d.name}</span>
-            <span className="text-xs font-semibold text-ink">{d.value}</span>
+          <div key={i}
+            className={`flex items-center gap-2 rounded px-2 py-1 ${i === highlightIdx ? '' : ''}`}
+            style={i === highlightIdx ? { background: d.color + '12' } : {}}>
+            <div
+              className="flex-shrink-0 rounded-full"
+              style={{
+                width: i === highlightIdx ? 10 : 8,
+                height: i === highlightIdx ? 10 : 8,
+                background: d.color,
+              }} />
+            <span
+              className="text-xs flex-1"
+              style={{ color: i === highlightIdx ? '#2C2C2A' : '#888786',
+                       fontWeight: i === highlightIdx ? 600 : 400 }}>
+              {d.name}
+            </span>
+            <span
+              className="text-xs font-semibold"
+              style={{ color: i === highlightIdx ? d.color : '#2C2C2A' }}>
+              {d.value}
+            </span>
             <span className="text-xs text-muted w-8 text-right">{d.pct}%</span>
           </div>
         ))}
@@ -442,7 +481,7 @@ function PanelA({ data }) {
       <div className="grid md:grid-cols-2 gap-4">
         <div className="bg-white rounded-2xl border border-border p-5">
           <Donut data={data.allocation} label={data.allocationLabel}
-            centreLabel="29%" centreSub="captured by your institution"
+            highlightIdx={1} highlightSub="accrues independently of borrower cash flow"
             note={data.allocationNote} />
         </div>
         <div className="bg-white rounded-2xl border border-border p-5">
@@ -464,7 +503,7 @@ function PanelB({ data }) {
       <div className="grid md:grid-cols-2 gap-4">
         <div className="bg-white rounded-2xl border border-border p-5">
           <Donut data={data.allocation} label={data.allocationLabel}
-            centreLabel="79%" centreSub="public benefit: supports grant case"
+            highlightIdx={0} highlightPct={79} highlightLabel="Public benefit captured" highlightSub="public sector + municipalities: strengthens the HMGP grant case"
             note={data.allocationNote} />
         </div>
         <div className="bg-white rounded-2xl border border-border p-5">
