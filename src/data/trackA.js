@@ -13,16 +13,16 @@ export const trackA = {
 
   summary: {
     headline: '21 of 38 properties are loan-viable today',
-    body: 'The top two interventions produce $31.3k in combined annual avoided loss at a total cost of $51,200. At 5% over 10 years, debt service of $6,620/yr is covered 4.7× by avoided loss alone. 29% of total avoided loss ($20,600/yr) accrues to the lender as reduced collateral exposure — independently of borrower cash flow.',
+    body: 'The top two interventions produce $31.3k in combined annual avoided loss at a total cost of $51,200. At 5% over 10 years, debt service of $6,620/yr is covered 4.7× by avoided loss alone. 29% of total avoided loss ($20,600/yr) accrues to the lender as reduced collateral exposure, independently of borrower cash flow.',
     recs: [
-      'Originate resilience loans on the 8 AE-zone single-family properties — strongest return, 1.6 yr payback, no grant needed.',
-      'Bundle 4 AE-zone multifamily properties for HVAC elevation — 4.7× DSCR; NFIP premium savings provide a secondary repayment stream.',
-      'Route 9 blended properties to a grant buydown programme first — public benefit share justifies subsidy.',
+      'Originate resilience loans on the 8 AE-zone single-family properties: strongest return, 1.6 yr payback, no grant needed.',
+      'Bundle 4 AE-zone multifamily properties for HVAC elevation: 4.7x DSCR, with NFIP premium savings providing a secondary repayment stream.',
+      'Route 9 blended properties to a grant buydown programme first: public benefit share justifies subsidy.',
     ],
   },
 
   verdictKpis: [
-    { label: 'DSCR — top 2 interventions', value: '4.7×', sub: 'at 5% / 10-year / 1.25× threshold' },
+    { label: 'DSCR: top 2 interventions', value: '4.7×', sub: 'at 5% / 10-year / 1.25× threshold' },
     { label: 'Annual avoided loss',         value: '$71k', denom: '/ yr', sub: '63% reduction in portfolio EAL' },
     { label: 'Lender collateral protection',value: '$20,600', sub: '29% of avoided loss, independent of borrower' },
   ],
@@ -67,7 +67,7 @@ export const trackA = {
       badge: 'Loan-viable', badgeType: 'loan',
       nfipImpact: {
         amount: 'Est. $900–$1,400/yr',
-        note: 'RR 2.0 eligible — machinery/equipment elevation. 18%/yr cap applies.',
+        note: 'RR 2.0 eligible: machinery/equipment elevation. 18%/yr cap applies.',
       },
     },
     {
@@ -121,16 +121,16 @@ export const trackA = {
     { name: 'Insurer',           pct: 21, value: '$14,900', color: '#C07A10' },
     { name: 'Public sector',     pct: 12, value: '$8,500',  color: '#B4B2A9' },
   ],
-  allocationNote: '29% accrues to the lender as reduced collateral exposure — independently of borrower cash flow. This holds even if the borrower does not service the resilience loan.',
+  allocationNote: '29% accrues to the lender as reduced collateral exposure, independently of borrower cash flow. This holds even if the borrower does not service the resilience loan.',
 
-  financingLabel: 'Financing classification — 38 properties',
+  financingLabel: 'Financing classification: 38 properties',
   financing: [
     { badge: 'Loan-viable',       badgeType: 'loan',  desc: 'Avoided loss covers debt service (DSCR ≥ 1.25×)', count: 21 },
     { badge: 'Blended',           badgeType: 'blend', desc: 'Partial loan + grant buydown needed',              count: 9  },
     { badge: 'Grant-eligible',    badgeType: 'grant', desc: 'Public benefit dominates; loan unviable',          count: 5  },
     { badge: 'Insufficient data', badgeType: 'gray',  desc: 'Re-run with full property data',                   count: 3  },
   ],
-  financingNote: 'NFIP premium relief (AE-zone properties): est. $900–$1,400/yr where RR 2.0-eligible mitigation is installed. 18%/yr statutory cap applies — relief is a glide path, not an instant cut.',
+  financingNote: 'NFIP premium relief (AE-zone properties): est. $900–$1,400/yr where RR 2.0-eligible mitigation is installed. 18%/yr statutory cap applies. Relief is a glide path, not an instant cut.',
   financingNote2: 'Methodology: FEMA HAZUS depth-damage functions by occupancy class. Flood zone via FEMA NFHL API. Financing classification at 5% / 10-year / 1.25× DSCR threshold. Illustrative ranges only.',
 
   footer: 'Planning-grade estimates from de-identified data and documented proxies. Figures are modelled expectations, not realised savings or guaranteed outcomes. NFIP premium impact figures are illustrative ranges; verify against current FEMA RR 2.0 schedules. Not an appraisal, insurance product, or investment advice.',

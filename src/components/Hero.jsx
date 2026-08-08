@@ -27,10 +27,10 @@ function CountUp({ end, suffix = '', duration = 1600 }) {
 }
 
 const ALLOCATION = [
-  { label: 'Borrower',          pct: 38, color: '#1D9E75' },
-  { label: 'Your institution',  pct: 29, color: '#3D5A6E' },
-  { label: 'Insurer',           pct: 21, color: '#C07A10' },
-  { label: 'Public sector',     pct: 12, color: '#B4B2A9' },
+  { label: 'Borrower',         pct: 38, color: '#1D9E75' },
+  { label: 'Your institution', pct: 29, color: '#3D5A6E' },
+  { label: 'Insurer',          pct: 21, color: '#C07A10' },
+  { label: 'Public sector',    pct: 12, color: '#B4B2A9' },
 ]
 
 export default function Hero() {
@@ -52,24 +52,21 @@ export default function Hero() {
             <span className="text-teal">made financeable.</span>
           </h1>
 
-          <p className="text-lg text-muted leading-relaxed mb-5">
-            Most lenders know some of their book is flood-exposed.
-            Few know that{' '}
-            <span className="font-semibold text-ink">
-              more than half those properties can support a resilience loan today
-            </span>{' '}
-            — without a grant, on the strength of avoided loss alone.
+          <p className="text-lg text-muted leading-relaxed mb-2">
+            Most property owners know they have flood exposure. Most of the
+            financiers behind those properties know they carry that risk.{' '}
+            <span className="font-bold text-ink">
+              Few know which assets can support a resilience investment today,
+              without a grant, on the strength of avoided loss alone.
+            </span>
           </p>
 
-          <p className="text-base text-ink font-semibold mb-1">
-            The output is a decision, not a data point.
-          </p>
-          <div className="border-l-2 border-teal pl-4 mb-8">
+          <div className="border-l-2 border-teal pl-4 mb-8 mt-5">
             <p className="text-base text-muted leading-relaxed">
               First Street, Jupiter, and Moody's tell you what the risk is.
-              RIAB tells you what to do about it — which interventions cut the most
-              risk per dollar, who captures each avoided loss, and how to structure
-              the financing.
+              RIAB tells you what to do about it, showing you which interventions cut the
+              most risk per dollar, who captures each avoided loss, and how to
+              structure the financing. The output is a decision space.
             </p>
           </div>
 
@@ -88,10 +85,10 @@ export default function Hero() {
         {/* Right */}
         <div className="bg-surface rounded-2xl p-7">
           <p className="text-xs font-semibold uppercase tracking-widest text-muted mb-6 text-center">
-            What RIAB calculates — live example
+            What RIAB calculates — example
           </p>
 
-          {/* EAL arithmetic — prominent */}
+          {/* EAL arithmetic */}
           <div className="grid grid-cols-[1fr_22px_1fr_22px_1fr] items-center mb-5">
             <div className="bg-white rounded-xl p-4 text-center shadow-sm">
               <p className="text-xs font-semibold uppercase tracking-wider text-muted mb-2">Baseline EAL</p>
@@ -130,7 +127,7 @@ export default function Hero() {
           </div>
 
           <p className="text-xs text-muted text-center italic">
-            Grounded in FEMA HAZUS depth-damage functions — same methodology as
+            Grounded in FEMA HAZUS depth-damage functions, the same methodology as
             federal hazard mitigation benefit-cost analysis
           </p>
         </div>

@@ -13,10 +13,10 @@ export const trackB = {
 
   summary: {
     headline: '16 of 24 assets support bond financing today',
-    body: '$2.3M in annual expected loss across 24 road and bridge assets. After the top-5 interventions, $1.4M/yr in avoided loss is achievable at a combined cost of $8.7M. Worst-case 1-in-100 flood exposure drops from $18.4M to $7.1M — a $11.3M reduction in tail risk. Residual 1-in-100 exposure exceeds current reserves by $4.2M, indicating a gap suitable for parametric coverage.',
+    body: '$2.3M in annual expected loss across 24 road and bridge assets. After the top-5 interventions, $1.4M/yr in avoided loss is achievable at a combined cost of $8.7M. Worst-case 1-in-100 flood exposure drops from $18.4M to $7.1M, a $11.3M reduction in tail risk. Residual 1-in-100 exposure exceeds current reserves by $4.2M, indicating a gap suitable for parametric coverage.',
     recs: [
-      'Prioritise culvert upgrades on the two highest-BCR corridors — 3.2× benefit-cost ratio, strongest bond-finance case.',
-      'Bundle 5 bridge scour protection projects into a single issuance — economies of scale; combined avoided loss justifies debt service.',
+      'Prioritise culvert upgrades on the two highest-BCR corridors: 3.2x benefit-cost ratio, strongest bond-finance case.',
+      'Bundle 5 bridge scour protection projects into a single issuance: economies of scale, combined avoided loss justifies debt service.',
       'Use parametric trigger (2.5 in/24 hr at regional gauge) to close the $4.2M reserve gap without drawing on operating budget.',
     ],
   },
@@ -40,7 +40,7 @@ export const trackB = {
   interventions: [
     {
       rank: 1,
-      name: 'Culvert upgrade — Corridor A',
+      name: 'Culvert upgrade: Corridor A',
       sub: 'Road infrastructure · river corridor AE zone · Towns 1 & 2',
       cost: '$320k',
       eal: '$280k–$340k',
@@ -56,7 +56,7 @@ export const trackB = {
     },
     {
       rank: 2,
-      name: 'Bridge scour protection — 5 crossings',
+      name: 'Bridge scour protection: 5 crossings',
       sub: 'Bridge infrastructure · AE zone · Towns 3, 4 & 5',
       cost: '$1.8M',
       eal: '$190k–$260k',
@@ -73,7 +73,7 @@ export const trackB = {
     },
     {
       rank: 3,
-      name: 'Road elevation — Corridor B flood plain',
+      name: 'Road elevation: Corridor B flood plain',
       sub: 'Road infrastructure · floodway / AE zone · Town 3',
       cost: '$2.4M',
       eal: '$145k–$195k',
@@ -90,7 +90,7 @@ export const trackB = {
     },
     {
       rank: 4,
-      name: 'Stormwater retention — 3 outfalls',
+      name: 'Stormwater retention: 3 outfalls',
       sub: 'Stormwater infrastructure · X zone · Towns 2 & 6',
       cost: '$890k',
       eal: '$68k–$95k',
@@ -107,7 +107,7 @@ export const trackB = {
     },
     {
       rank: 5,
-      name: 'Road armoring — 4 segments',
+      name: 'Road armoring: 4 segments',
       sub: 'Road infrastructure · river corridor / X zone · Towns 1, 4, 5 & 6',
       cost: '$3.3M',
       eal: '$34k–$55k',
@@ -129,9 +129,9 @@ export const trackB = {
     { name: 'Municipalities',  pct: 31, value: '$434k', color: '#1D9E75' },
     { name: 'State / insurer', pct: 21, value: '$294k', color: '#C07A10' },
   ],
-  allocationNote: 'Public benefit dominates (79%) — strengthening the case for grant participation alongside bond debt. BCRs above 1.0× qualify for FEMA HMGP; 3 of 5 projects meet this threshold.',
+  allocationNote: 'Public benefit dominates (79%), strengthening the case for grant participation alongside bond debt. BCRs above 1.0× qualify for FEMA HMGP; 3 of 5 projects meet this threshold.',
 
-  financingLabel: 'Capital programme — 24 assets',
+  financingLabel: 'Capital programme: 24 assets',
   financing: [
     { badge: 'Bond candidate',  badgeType: 'loan',  desc: 'Avoided loss supports debt service at 5% / 20-yr', count: 16 },
     { badge: 'Blended',         badgeType: 'blend', desc: 'Partial bond + HMGP / BRIC grant',                 count: 5  },
@@ -140,11 +140,11 @@ export const trackB = {
   financingNote: 'Parametric insurance recommended: $4.2M cover at 2.5 in/24 hr trigger at regional gauge. Closes the 1-in-100 reserve adequacy gap without drawing on operating budget.',
   financingNote2: 'Methodology: FEMA HAZUS infrastructure curves + state agency river corridor data. Tail loss at USGS AEP estimates. Financing at 5% / 20-year / 1.0× BCR. All figures illustrative.',
 
-  capitalStackLabel: 'Capital programme assembly — top-5 projects',
+  capitalStackLabel: 'Capital programme assembly: top-5 projects',
   capitalStackNote: 'Bond / HMGP / BRIC proportions are illustrative; actual eligibility requires programme review.',
   capitalStack: [
     {
-      label: 'Culvert upgrade — Corridor A',
+      label: 'Culvert upgrade: Corridor A',
       segments: [
         { label: 'Bond', value: 320000, color: '#3D5A6E' },
       ],
@@ -157,7 +157,7 @@ export const trackB = {
       ],
     },
     {
-      label: 'Road elevation — Corridor B',
+      label: 'Road elevation: Corridor B',
       segments: [
         { label: 'Bond', value: 1200000, color: '#3D5A6E' },
         { label: 'HMGP', value: 1200000, color: '#1D9E75' },

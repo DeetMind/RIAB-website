@@ -223,7 +223,7 @@ function TableB({ interventions, accent }) {
           Infrastructure projects ranked by avoided loss per public dollar invested
         </p>
         <p className="text-xs text-muted mt-0.5">
-          Above the divider: BCR ≥ 1.0× — FEMA HMGP eligible and bond-viable at 5% / 20-year.
+          Above the divider: BCR ≥ 1.0×, FEMA HMGP eligible and bond-viable at 5% / 20-year.
         </p>
       </div>
       <div className="overflow-x-auto">
@@ -464,7 +464,7 @@ function PanelB({ data }) {
       <div className="grid md:grid-cols-2 gap-4">
         <div className="bg-white rounded-2xl border border-border p-5">
           <Donut data={data.allocation} label={data.allocationLabel}
-            centreLabel="79%" centreSub="public benefit — supports grant case"
+            centreLabel="79%" centreSub="public benefit: supports grant case"
             note={data.allocationNote} />
         </div>
         <div className="bg-white rounded-2xl border border-border p-5">
