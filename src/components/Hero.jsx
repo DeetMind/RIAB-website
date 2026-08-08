@@ -36,7 +36,10 @@ const ALLOCATION = [
 export default function Hero() {
   return (
     <section className="min-h-screen pt-14 flex items-center bg-white">
+      <div className="max-w-6xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-16 items-center">
 
+        {/* Left */}
+        <div>
           <h1 className="text-4xl lg:text-5xl font-bold text-ink leading-tight mb-5">
             Flood risk,{' '}
             <span className="text-teal">made financeable.</span>
